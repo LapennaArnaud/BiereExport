@@ -91,3 +91,12 @@
 [06-Nov-2017 09:56:55 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/createUser.php on line 2
 [06-Nov-2017 09:56:55 UTC] PHP Stack trace:
 [06-Nov-2017 09:56:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/createUser.php:0
+[30-Nov-2017 10:03:27 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/produit.php on line 2
+[30-Nov-2017 10:03:27 UTC] PHP Stack trace:
+[30-Nov-2017 10:03:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/produit.php:0
+[30-Nov-2017 10:03:58 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/produit.php on line 2
+[30-Nov-2017 10:03:58 UTC] PHP Stack trace:
+[30-Nov-2017 10:03:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/produit.php:0
+[30-Nov-2017 10:04:02 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/produit.php on line 2
+[30-Nov-2017 10:04:02 UTC] PHP Stack trace:
+[30-Nov-2017 10:04:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/produit.php:0

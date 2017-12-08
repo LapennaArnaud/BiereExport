@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-09 16:06:28
+/* Smarty version 3.1.31, created on 2017-12-07 20:49:53
   from "/home/ubuntu/workspace/templates/createUser.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a047d04b21ae4_13520114',
+  'unifunc' => 'content_5a29a9720046a8_96084031',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '008f98428d2fe357817d46159aae9b1b629f336b' => 
     array (
       0 => '/home/ubuntu/workspace/templates/createUser.tpl',
-      1 => 1510243578,
+      1 => 1512679789,
       2 => 'file',
     ),
   ),
@@ -20,40 +20,40 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a047d04b21ae4_13520114 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a29a9720046a8_96084031 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15730601085a047d04af7573_01984808', "titre");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21018234175a29a971f2f6f5_65943522', "titre");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5363427615a047d04aff5f7_05713857', "zone_travail");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9919206855a29a971f33c10_55164282', "zone_travail");
 ?>
 
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20074680935a047d04b12853_07871630', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12227500665a29a971f3e7c5_99002696', "script");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6801584055a047d04b1b2e2_04215873', "javascript");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10779179405a29a972000c75_26340888', "javascript");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/masterPage.tpl");
 }
 /* {block "titre"} */
-class Block_15730601085a047d04af7573_01984808 extends Smarty_Internal_Block
+class Block_21018234175a29a971f2f6f5_65943522 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'titre' => 
   array (
-    0 => 'Block_15730601085a047d04af7573_01984808',
+    0 => 'Block_21018234175a29a971f2f6f5_65943522',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -65,12 +65,12 @@ Création de l'utilisateur
 }
 /* {/block "titre"} */
 /* {block "zone_travail"} */
-class Block_5363427615a047d04aff5f7_05713857 extends Smarty_Internal_Block
+class Block_9919206855a29a971f33c10_55164282 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'zone_travail' => 
   array (
-    0 => 'Block_5363427615a047d04aff5f7_05713857',
+    0 => 'Block_9919206855a29a971f33c10_55164282',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,7 +82,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     	</div>
     	
     	<div class="col-md-1"></div>
-    		<form method="POST" action="?page=createUser&action=validation" class="form-horizontal col-md-9" id="form-user" role="form">
+    		<form method="POST" action="?page=clientController&action=validationCreationCompte" class="form-horizontal col-md-9" id="form-user" role="form">
     			<div class="row">
     			<div class="form-group col-md-12">
     				<label class="control-label col-md-3">Nom :</label>
@@ -166,7 +166,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     				</div>
     			</div>
     									
-    				<div class="form col-xs-6">
+    				<div class="form col-md-offset-6">
     					<button type="submit" class="btn btn-default" >Valider</button>
     				</div>
     			</div>
@@ -177,12 +177,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "zone_travail"} */
 /* {block "script"} */
-class Block_20074680935a047d04b12853_07871630 extends Smarty_Internal_Block
+class Block_12227500665a29a971f3e7c5_99002696 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_20074680935a047d04b12853_07871630',
+    0 => 'Block_12227500665a29a971f3e7c5_99002696',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -211,12 +211,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "script"} */
 /* {block "javascript"} */
-class Block_6801584055a047d04b1b2e2_04215873 extends Smarty_Internal_Block
+class Block_10779179405a29a972000c75_26340888 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'javascript' => 
   array (
-    0 => 'Block_6801584055a047d04b1b2e2_04215873',
+    0 => 'Block_10779179405a29a972000c75_26340888',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -225,12 +225,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <?php echo '<script'; ?>
 >
     	$('#form-user').validate({
-    		//rules: validateRules
-    	  	})
+    		rules: validateRules
+    	})
+    	
     	$(".datepicker").datepicker({
     		format : "dd/mm/yyyy",
     		language : "fr",
-    	    })
+    	})
+    	
     	$('#datepicker').datepicker('setDate', new Date(1990, 0, 1));
     	$('#datepicker').datepicker('update'); 
     

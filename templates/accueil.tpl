@@ -6,6 +6,10 @@ Accueil
 
 {block name="zone_travail"}
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- PB DU CAROUSSEL : manque dans la balise head le lien vers le script jquery.min.js ET bootstrap.min.js
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		-->
 		  <!-- Indicators -->
 			<ol class="carousel-indicators">
 		    	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -16,13 +20,11 @@ Accueil
   			<!-- Wrapper for slides -->
 	  		<div class="carousel-inner">
 		    	<div class="item active">
-		      		<img src="../public/img/biere1.jpg" alt="Biere 1">
-		    	</div>
-		
-		    	<div class="item">
 		      		<img src="../public/img/biere2.jpg" alt="Biere 2">
 		    	</div>
-		
+		    	<div class="item">
+		      		<img src="../public/img/biere1.jpg" alt="Biere 1">
+		    	</div>
 		    	<div class="item">
 		      		<img src="../public/img/biere3.jpg" alt="Biere 3">
 		    	</div>
@@ -38,15 +40,19 @@ Accueil
 			    	<span class="sr-only">Next</span>
 			  	</a>
 		</div>
-		
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<h1><u>Bienvenue sur Bière EXPORT</u></h1>
 			<br>
 			<p class="text-home">
-				Haec dum oriens diu perferret, caeli reserato tepore Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus terrae Gallorum.<br>
-				Utque aegrum corpus quassari etiam levibus solet offensis, ita animus eius angustus et tener, quicquid increpuisset, ad salutis suae dispendium existimans factum aut cogitatum, insontium caedibus fecit victoriam luctuosam.<br>
-				Exsistit autem hoc loco quaedam quaestio subdifficilis, num quando amici novi, digni amicitia, veteribus sint anteponendi, ut equis vetulis teneros anteponere solemus. Indigna homine dubitatio! Non enim debent esse amicitiarum sicut aliarum rerum satietates; veterrima quaeque, ut ea vina, quae vetustatem ferunt, esse debet suavissima; verumque illud est, quod dicitur, multos modios salis simul edendos esse, ut amicitiae munus expletum sit.<br>
+				Bière EXPORT, leader français sur le marché de la bière en ligne, proposant des bières bouteilles, des tireuses à bière, des verres à bière, des fûts et des coffrets de bières, est composé d’une équipe jeune et dynamique avec une seule priorité : la satisfaction des clients.
+				Pour y parvenir, nous nous efforçons de vous offrir un service de qualité, d’être toujours à votre écoute et de vous dénicher de nouvelles bières introuvables en France et plus excellentes les unes que les autres.<br/><br/>
+				Véritables spécialistes en bières, en brasseries et dans leurs domaines de compétences, nos membres se démènent chaque jour en logistique, achat/vente, service client et informatique pour faciliter et transformer votre expérience d’achat en réel plaisir.
 			</p>
 		</div>
+{/block}
+
+{block name="script"}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
 {/block}

@@ -1,18 +1,22 @@
 propel:
   database:
       connections:
-          librairie:
+          unibiere:
               adapter: mysql
               classname: Propel\Runtime\Connection\ConnectionWrapper
-              dsn: "mysql:host=localhost;dbname=librairie"
+              dsn: "mysql:host=localhost;dbname=unibiere"
               user: root
               password: 
               attributes:
+              settings:
+                charset: utf8
+                queries:
+                  utf8: "SET NAMES utf8 COLLATE utf8_unicode_ci, COLLATION_CONNECTION = utf8_unicode_ci, COLLATION_DATABASE = utf8_unicode_ci, COLLATION_SERVER = utf8_unicode_ci"
   runtime:
-      defaultConnection: librairie
+      defaultConnection: unibiere
       connections:
-          - librairie
+          - unibiere
   generator:
-      defaultConnection: librairie
+      defaultConnection: unibiere
       connections:
-          - librairie
+          - unibiere

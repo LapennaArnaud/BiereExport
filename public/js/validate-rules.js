@@ -1,7 +1,7 @@
 var validateRules ={
 	nom : {
 		required : true,
-		minlength: 4,
+		minlength: 1,
 		maxlength: 20
 	},
 	prenom : {
@@ -36,6 +36,6 @@ var validateRules ={
 	},
 	password_confirmation : {
 		required : false,
-		equalTo: "password"
+//		equalTo: "password"
 	} 
 }
