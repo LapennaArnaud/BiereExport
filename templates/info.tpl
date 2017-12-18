@@ -5,7 +5,6 @@ Information
 {/block}
 
 {block name="zone_travail"}
-
 <div id="form-container" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12">
 	<div id="form-title-div">
 	    <h2 class="text-center">Nos informations</h2>
@@ -21,6 +20,4 @@ Information
 	    </p>
     </div>
 </div>
-
-
 {/block}

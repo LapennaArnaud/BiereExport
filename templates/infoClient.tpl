@@ -6,7 +6,6 @@ Vos informations
 
 
 {block name="zone_travail"}
-
 		<div id="form-container" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12">
 			<div id="form-title-div">
 				<h2 class="text-center">Vos informations</h2>
@@ -35,8 +34,14 @@ Vos informations
 		    				</div>
 		    			</div>
 		    			
-		    			<div class="form-group col-md-12 col-xs-12">
-		    				<div class="form col-md-offset-8">
+		    			<div class="form-group col-md-offset-2 col-xs-6">
+		    				<div class="form">
+		    					<a href="/utilisateur/modificationMdp.html"><button type="button" class="btn btn-default" >Modifier MDP</button></a>
+		    				</div>
+		    			</div>
+		    			
+		    			<div class="form-group col-md-3 col-xs-6">
+		    				<div class="form">
 		    					<button type="submit" class="btn btn-default" >Modifier</button>
 		    				</div>
 		    			</div>

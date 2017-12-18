@@ -4,7 +4,6 @@
 Recherche
 {/block}
 
-
 {block name="zone_travail"}
     {if !empty($productList)}
         <h1 class="col-md-offset-2"><u>Catalogue</u></h1>
@@ -68,7 +67,7 @@ Recherche
             type: "GET",
             dataType: "json",
             url: 'index.php',
-            data: { page: "produit", action: "ajoutPanier", "id" : id },
+            data: { page: "produit" ,action: "ajoutPanier", "id" : id },
             //data: { "/produit/ajoutPanier/id" },
             success: function (data){
                 $("#nbPanier").text(data.nb);

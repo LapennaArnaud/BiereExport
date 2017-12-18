@@ -1,8 +1,9 @@
 #Activation du Rewriting d'URL
 RewriteEngine On
+
+
 #Pour que la requete AJAX fonction avec /page&action="".html
 RewriteRule ^([^/]*)\.html$ /?page=$1 [L]
-
 
 #Pour avoir une URL propre du style /page/action.html
 RewriteRule ^([^/]*)/([^/]*)\.html$ /?page=$1&action=$2 [L]

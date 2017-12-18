@@ -6,9 +6,6 @@ Paiement
 
 
 {block name="zone_travail"}
-
-
-pfqjqfp
 {/block}
 
 

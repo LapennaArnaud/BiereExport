@@ -30,7 +30,7 @@ Login
 							<button type="submit" class="btn btn-default" >Valider</button>
 						</div>
 						<div class="form col-md-offset-8 col-xs-12">
-							<a href"/mdpOublie.html">Mot de passe oublié</a> <!-- TODO faire la redirection-->
+							<a href="/utilisateur/mdpOublie.html">Mot de passe oublié</a>
 						</div>
 					</div>
 				</div>

@@ -84,7 +84,7 @@ Création de l'utilisateur
     			<div class="form-group col-md-12">
     				<label class="control-label col-md-3" >Mot de passe :</label>
     				<div class="col-md-9">
-    					<input class="form-control" type="password" name="password" id="password" >
+    					<input class="form-control" type="password" name="password" id="password" pwcheck="pwcheck">
     				</div>
     			</div>
     			
@@ -106,6 +106,14 @@ Création de l'utilisateur
 
 {block name="javascript"}
     <script>
+        //Ajout de regle du force du password 
+        $.validator.addMethod("pwcheck", function(value) {
+           return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // Doit contenir seulement ces caratères
+           && /[a-z]/.test(value) // au moins une minuscule
+           && /[A-Z]/.test(value) // au moins une majuscule
+           && /\d/.test(value) // au moins un nombre
+        });
+        
     	$('#form-user').validate({
     		rules: validateRules
     	})

@@ -62,14 +62,14 @@
 
 {block name="masterScript"}
 <script>
-
+//script liée à la masterpage si besoin d'execution
+//exemple utilisation de requette sur le menubar
     $(function() {
-
         $('#logout').click(function() {
-        	$('#menuBar').load('maj2.html', function() {
-      		});
-        });  
+        	
+        });
       });
+      
 </script>
 {/block}
 

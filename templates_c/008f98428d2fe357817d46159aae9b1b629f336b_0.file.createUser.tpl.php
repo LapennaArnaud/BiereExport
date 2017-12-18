@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-12 16:00:21
+/* Smarty version 3.1.31, created on 2017-12-18 13:00:35
   from "/home/ubuntu/workspace/templates/createUser.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2ffd155a6be5_85887985',
+  'unifunc' => 'content_5a37bbf3a89741_12364881',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '008f98428d2fe357817d46159aae9b1b629f336b' => 
     array (
       0 => '/home/ubuntu/workspace/templates/createUser.tpl',
-      1 => 1513094420,
+      1 => 1513594715,
       2 => 'file',
     ),
   ),
@@ -20,34 +20,34 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a2ffd155a6be5_85887985 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a37bbf3a89741_12364881 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1371904975a2ffd1558fb18_71337688', "titre");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7949092985a37bbf3a642c4_33732265', "titre");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_184578115a2ffd15595107_20266477', "zone_travail");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21340482145a37bbf3a6e911_93014437', "zone_travail");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3414870075a2ffd155a2c32_12330787', "javascript");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20976816355a37bbf3a7fc41_85748024', "javascript");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/masterPage.tpl");
 }
 /* {block "titre"} */
-class Block_1371904975a2ffd1558fb18_71337688 extends Smarty_Internal_Block
+class Block_7949092985a37bbf3a642c4_33732265 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'titre' => 
   array (
-    0 => 'Block_1371904975a2ffd1558fb18_71337688',
+    0 => 'Block_7949092985a37bbf3a642c4_33732265',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -59,12 +59,12 @@ Création de l'utilisateur
 }
 /* {/block "titre"} */
 /* {block "zone_travail"} */
-class Block_184578115a2ffd15595107_20266477 extends Smarty_Internal_Block
+class Block_21340482145a37bbf3a6e911_93014437 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'zone_travail' => 
   array (
-    0 => 'Block_184578115a2ffd15595107_20266477',
+    0 => 'Block_21340482145a37bbf3a6e911_93014437',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -149,7 +149,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     			<div class="form-group col-md-12">
     				<label class="control-label col-md-3" >Mot de passe :</label>
     				<div class="col-md-9">
-    					<input class="form-control" type="password" name="password" id="password" >
+    					<input class="form-control" type="password" name="password" id="password" pwcheck="pwcheck">
     				</div>
     			</div>
     			
@@ -171,12 +171,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "zone_travail"} */
 /* {block "javascript"} */
-class Block_3414870075a2ffd155a2c32_12330787 extends Smarty_Internal_Block
+class Block_20976816355a37bbf3a7fc41_85748024 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'javascript' => 
   array (
-    0 => 'Block_3414870075a2ffd155a2c32_12330787',
+    0 => 'Block_20976816355a37bbf3a7fc41_85748024',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -184,6 +184,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <?php echo '<script'; ?>
 >
+        //Ajout de regle du force du password 
+        $.validator.addMethod("pwcheck", function(value) {
+           return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // Doit contenir seulement ces caratères
+           && /[a-z]/.test(value) // au moins une minuscule
+           && /[A-Z]/.test(value) // au moins une majuscule
+           && /\d/.test(value) // au moins un nombre
+        });
+        
     	$('#form-user').validate({
     		rules: validateRules
     	})

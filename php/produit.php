@@ -210,22 +210,6 @@ class produit
 			$this->response->setData(array('error' => 'NOK'));
 		}
 	}
-	
-		//test pour voir si les auto-value dans les bdd fonctionnent.
-	public function testInsertCommande()
-	{
-		//s'instancie avec la date actuelle d'instanciation de la machine
-		$date = new DateTime();
-		
-		$lesClients = ClientQuery::create() ->find();
-		$client = $lesClients[0]; // objet Client (class) first ellement value
-		
-		//Création d'une commande pour le test
-		$commande = new Commande();
-		$commande->setDate($date);
-		$commande->setClient_id($client->getIdClient()); // on récupère l'id du client (objet client passé en param)
-		$commande->save();
-	}
 }
 
 

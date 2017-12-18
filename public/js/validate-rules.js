@@ -31,11 +31,12 @@ var validateRules ={
 		required : true
 	},
 	password : {
+		pwcheck : true,
 		required : true,
 		minlength: 8
 	},
 	password_confirmation : {
-		required : false,
-//		equalTo: "password"
+		required : true,
+		equalTo: "#password"
 	} 
 }

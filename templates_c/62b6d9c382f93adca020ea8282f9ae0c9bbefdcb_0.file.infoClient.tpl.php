@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-12 07:45:48
+/* Smarty version 3.1.31, created on 2017-12-18 15:44:05
   from "/home/ubuntu/workspace/templates/infoClient.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2f892c5e0a80_49426561',
+  'unifunc' => 'content_5a37e2456825f3_74078788',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62b6d9c382f93adca020ea8282f9ae0c9bbefdcb' => 
     array (
       0 => '/home/ubuntu/workspace/templates/infoClient.tpl',
-      1 => 1513032646,
+      1 => 1513611741,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a2f892c5e0a80_49426561 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a37e2456825f3_74078788 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5049226515a2f892c5b8575_61836888', "titre");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14087630095a37e245654b09_76439531', "titre");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_68378815a2f892c5bd9e1_84190008', "zone_travail");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_411854415a37e2456592b2_44345340', "zone_travail");
 ?>
 
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/masterPage.tpl");
 }
 /* {block "titre"} */
-class Block_5049226515a2f892c5b8575_61836888 extends Smarty_Internal_Block
+class Block_14087630095a37e245654b09_76439531 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'titre' => 
   array (
-    0 => 'Block_5049226515a2f892c5b8575_61836888',
+    0 => 'Block_14087630095a37e245654b09_76439531',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -57,17 +57,16 @@ Vos informations
 }
 /* {/block "titre"} */
 /* {block "zone_travail"} */
-class Block_68378815a2f892c5bd9e1_84190008 extends Smarty_Internal_Block
+class Block_411854415a37e2456592b2_44345340 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'zone_travail' => 
   array (
-    0 => 'Block_68378815a2f892c5bd9e1_84190008',
+    0 => 'Block_411854415a37e2456592b2_44345340',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
 
 		<div id="form-container" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12">
 			<div id="form-title-div">
@@ -100,8 +99,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 		    				</div>
 		    			</div>
 		    			
-		    			<div class="form-group col-md-12 col-xs-12">
-		    				<div class="form col-md-offset-8">
+		    			<div class="form-group col-md-offset-2 col-xs-6">
+		    				<div class="form">
+		    					<a href="/utilisateur/modificationMdp.html"><button type="button" class="btn btn-default" >Modifier MDP</button></a>
+		    				</div>
+		    			</div>
+		    			
+		    			<div class="form-group col-md-3 col-xs-6">
+		    				<div class="form">
 		    					<button type="submit" class="btn btn-default" >Modifier</button>
 		    				</div>
 		    			</div>

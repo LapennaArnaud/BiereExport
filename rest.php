@@ -31,11 +31,11 @@
 	$app->post('/transaction/{client}/{montant}/{devise}/{date}','addTransaction');
 	
 	function addTransaction($request, $response, $args){
-		$_SESSION['error'] = 1;
+
 		$idCLient = $args["client"];
 		
 		// A FAIRE CHECK CLIENT 
-		
+	//return json_encode(array('banae' => 'jacks'));
 		
 		
 	//Transaction
@@ -55,6 +55,5 @@
 		
 		
 	}
-	
 	$app->run();
 ?>

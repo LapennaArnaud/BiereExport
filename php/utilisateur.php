@@ -20,6 +20,9 @@ class utilisateur
 		}elseif ($this->request->getParam('action')=="mdpOublie")
 		{
 			$this->response->setPageDisplay("mdpOublie");
+		}elseif ($this->request->getParam('action')=="modificationMdp")
+		{
+			$this->response->setPageDisplay("modificationMdp");
 		}elseif ($this->request->getParam('action')=="infoClient") 
 		{
 			$this->response->setPageDisplay("infoClient");
@@ -27,6 +30,10 @@ class utilisateur
 		{
 			$this->register();
 			$this->response->setPageDisplay("validationCreationCompte");
+		}elseif ($this->request->getParam('action')=="validationMdpOublie")
+		{
+			$this->checkInfoMdpOublie();
+			$this->response->setPageDisplay("validationMdpOublie");
 		}elseif ($this->request->getParam('action')=="validationLogin") 
 		{
 			$loginSuccess=$this->login();
@@ -37,24 +44,30 @@ class utilisateur
 			{
 				$this->response->setPageDisplay("login");
 			}
-		}elseif ($this->request->getParam('action')=="logOut") 
+		}elseif ($this->request->getParam('action')=="logOut")
 		{
 			$this->log_out();
 			$this->response->setPageDisplay("accueil");
+			//redirectig de force vers le index.php sinon le header ne se met pas à jours.
+			/* Redirection vers une page différente du même dossier ; ici d'un dossier parent*/
+			$host  = $_SERVER['HTTP_HOST'];
+			$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+			$extra = '../index.php';
+			header("Location: https://$host$uri/$extra");
+			exit;
 		}elseif ($this->request->getParam('action')=="editCompte")
 		{
 			$this->edit_compte();
 			//TODO reload la session à jours | update session 
 			//OU ne pas afficher le tpl(bad solution)
 			$this->response->setPageDisplay("infoClient");
+		}elseif ($this->request->getParam('action')=="editMdpCompte")
+		{
+			$this->edit_mdp_compte();
+			//on set la meme page avec la variable Flag de succès de l'opération dans la reponse
+			$this->response->setPageDisplay("modificationMdp");
 		}
 		
-		//$this->response->setPageDisplay($this->request->getParam('page'));
-	    //return $this->response;
-	    
-	    //$this->response->setPageDisplay("confirmationUser");
-		
-	    //$this->response->setPageDisplay($this->request->getParam('page'));
 	    return $this->response;
 	}
 	
@@ -138,9 +151,6 @@ class utilisateur
 				$_SESSION['pays']=$selectedClient->getPays();
 				$_SESSION['email']=$selectedClient->getEmail();
 				$_SESSION['idClient']=$selectedClient->getIdClient();
-				$_SESSION['error']=0;
-				$_SESSION['client']=$selectedClient;
-
 				//$_SESSION['isAdmin']=true;
 				$success=true;
 				break;
@@ -209,6 +219,53 @@ class utilisateur
 		}
 	}
 	
+	public function edit_mdp_compte()
+	{
+		// Recuperation des variables du form-user
+		$mdp_old = $_POST['password_old']; // variable name pas id dans le html
+		$mdp_new = $_POST['password'];
+		$mdp_new_verif = $_POST['password_confirmation'];
+		$login = $_SESSION['login'];
+		
+		$client = new Client();
+		$success=2; // vérification state si les champs rentré sont bon pour executer la demande et si le déroulement s'est bien passé
+		//de base $success = 2 car on ne peut pas faire passer false au tpl ==> enorme bug (trouvé suit à un debug)
+		//2 == false || 1 == true
+		
+		//si le champ nouveau mdp et validation new mdp ne sont pas égale on ne fait rien! (normalement impossible grace à la validation Jquerry)
+		if($mdp_new==$mdp_new_verif){
+			// Mise en place de la requete Propel
+			$selectedClient = ClientQuery::create()
+			    ->find(); // on utilise properl
+			foreach($selectedClient as $selectedClient) 
+			{
+				//Vérification si le user a renter son bon ancient mdp
+				if($login == $selectedClient->getLogin() AND password_verify($mdp_old, $selectedClient->getPass()))
+				{
+					$user_exist = 1;
+					//on récupère l'utilisateur
+					$client=$selectedClient;
+					break;
+				}else
+				{
+					$user_exist = 0;
+				}
+			}
+			if($user_exist == 1)
+			{
+				//modification du mdp de l'user
+				
+				$client->setPass(password_hash($mdp_new, PASSWORD_DEFAULT));
+				//mise à jour (update : save les changements d'un objet déja récupéré)
+				$client->save(); //http://propelorm.org/documentation/03-basic-crud.html
+				
+				$success = 1; // on set le Flag de sucèss à 1 pour notifier le bon déroulement;
+			}
+		}
+		//Passage du Flag de succès au TPL
+		$this->response->setData(array("flagList"=>$success));
+	}
+	
 	public function getHistoriqueCommande($idClient){
 		// Mise en place de la requete Propel  http://propelorm.org/Propel/reference/model-criteria.html
 		$lesCommandes = CommandeQuery::create()
@@ -225,6 +282,37 @@ class utilisateur
 			}
 		}
 		return $lesCommandes; // à compléter
+	}
+	
+	public function checkInfoMdpOublie(){
+		// Recuperation des variables du form-user
+		// variable name pas id dans le html
+		$email = $_POST['email'];
+		$login = $_POST['login'];
+		
+		// Mise en place de la requete Propel
+		$selectedClient = ClientQuery::create()
+		    ->find(); // on utilise properl
+		foreach($selectedClient as $selectedClient) 
+		{
+			//Vérification si le user est existant
+			if($login == $selectedClient->getLogin() && $email == $selectedClient->getEmail() )
+			{
+				$user_exist = 1;
+				$user=$selectedClient;
+				break;
+			}else
+			{
+				$user_exist = 0;
+			}
+		}
+		if($user_exist == 1)
+		{
+			//Passage du Client au TPL
+			$this->response->setData(array("clientList"=>$user));
+			
+			//ici imaginer/Utiliser un WS d'envoie de mail avec l'envoie du champ en $client->getMdp() au mail du compte
+		}
 	}
 
 }
