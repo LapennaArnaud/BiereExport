@@ -1,10 +1,6 @@
 <?php
-	
 	session_start();
-	
-	$_SESSION['login']="arnotos";
-	$_SESSION['mdp']="123";
-	$_SESSION['isAdmin']=true;
+	session_regenerate_id(true);
 	
 	// LIBS
 	require 'vendor/autoload.php';

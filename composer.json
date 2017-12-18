@@ -3,7 +3,7 @@
         "twitter/bootstrap": "v2.3.1",
         "propel/propel" : "~2.0@dev",
         "smarty/smarty": "~3",
-	"slim/slim": "~3"
+	"slim/slim": "^3.0"
     },
     
     

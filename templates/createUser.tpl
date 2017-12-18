@@ -11,7 +11,7 @@ Création de l'utilisateur
     	</div>
     	
     	<div class="col-md-1"></div>
-    		<form method="POST" action="?page=clientController&action=validationCreationCompte" class="form-horizontal col-md-9" id="form-user" role="form">
+    		<form method="POST" action="/utilisateur/validationCreationCompte.html" class="form-horizontal col-md-9" id="form-user" role="form">
     			<div class="row">
     			<div class="form-group col-md-12">
     				<label class="control-label col-md-3">Nom :</label>
@@ -95,7 +95,7 @@ Création de l'utilisateur
     				</div>
     			</div>
     									
-    				<div class="form col-md-offset-6">
+    				<div class="form col-md-offset-6 col-xs-offset-5">
     					<button type="submit" class="btn btn-default" >Valider</button>
     				</div>
     			</div>
@@ -103,16 +103,6 @@ Création de l'utilisateur
     </div>
 {/block}
 
-
-
-{block name="script"}
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../public/js/jquery.validate.js"></script>
-	<script type="text/javascript" src="../public/js/validate-rules.js"></script>
-	<script type="text/javascript" src="../public/js/messages_fr.js"></script>
-	<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../public/js/bootstrap-datepicker.min.js"></script>
-{/block}
 
 {block name="javascript"}
     <script>

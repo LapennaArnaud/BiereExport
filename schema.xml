@@ -16,7 +16,7 @@
   	<column name="pays" phpName="Pays" type="VARCHAR" size="50" required="false"/>
     <column name="login" phpName="Login" type="VARCHAR" size="25" required="true"/>
     <column name="email" phpName="Email" type="VARCHAR" size="1024" required="false"/>
-    <column name="pass" phpName="Pass" type="VARCHAR" size="25" required="true"/>
+    <column name="pass" phpName="Pass" type="VARCHAR" size="200" required="true"/>
     <column name="solde" phpName="Solde" type="FLOAT" required="false"/>
     <column name="tel" phpName="Tel" type="DECIMAL" size="10" scale="0" required="false"/>
     <vendor type="mysql">
@@ -46,6 +46,7 @@
     <column name="idCommande" phpName="IdCommande" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
     <column name="etatCommande" phpName="EtatCommande" type="BOOLEAN" required="true"/>
     <column name="date" phpName="Date" type="DATE" required="false"/>
+    <column name="montant" phpName="Montant" type="FLOAT" required="true"/>
     <column name="client_id" phpName="Client_id" type="INTEGER" required="true"/>
     <foreign-key foreignTable="client" name="commande_FK_1" onDelete="CASCADE" onUpdate="RESTRICT">
       <reference local="client_id" foreign="idClient"/>
