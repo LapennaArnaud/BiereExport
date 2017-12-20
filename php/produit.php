@@ -60,7 +60,7 @@ class produit
         $this->response->setData(array("productList"=>$selectedArticle,"lesCategories"=>$lesCategories));
 	}
 	
-	//Fonction de recherche avec le nom d'un produit 
+	//Fonction de recherche avec le nom d'un produit et LIKE Criteria 
 	public function recherche()
 	{
 	    $recherche = $_POST['recherche'];
@@ -136,10 +136,8 @@ class produit
 	{
 		//Si la taille du tableau panier n'est pas égale a 0 on charge le panier
 		if(sizeof($_SESSION["panier"])!==0){
-			//print_r($_SESSION["panier"]);
 			$selectedArticle = ArticleQuery::create()
         		->findPks(array_keys($_SESSION["panier"]));
-        	//print_r($selectedArticle);
 			$this->response->setData(array("productList"=>$selectedArticle, "panier"=>$_SESSION["panier"]));
 		}
 	}
@@ -181,7 +179,6 @@ class produit
 		$output = curl_exec($ch);
 		$output= json_decode($output);
 
-		
 		if(curl_getinfo($ch, CURLINFO_HTTP_CODE)!==200){
 			throw new Exception(curl_error($ch)." Code ".curl_getinfo($ch, CURLINFO_HTTP_CODE));
 		}
@@ -192,12 +189,12 @@ class produit
 	public function paiement()
 	{
 		if(isset($_SESSION['idClient'])){
-		
+			//Contruction de l'URL
 			$url = $_SERVER['HTTP_HOST'].'/rest.php/transaction';
 			$date = date('d-m-Y');
 			$myvars = array(
 				'idClient' => $_SESSION['idClient'],
-				'montant' => $_SESSION['totalPanier'], //A faire aussi
+				'montant' => $_SESSION['totalPanier'],
 				'date' => $date
 			);
 			foreach($myvars as $i){

@@ -17,22 +17,6 @@
     	]
 	]);
 	
-	
-	$app->get('/client/{idclient}', 'getClient' );
-	
-		function getClient ($request,$response,$args) {
-			return json_encode("coucou");
-		}
-	
-	$app->post('/client', 'addClient' );
-	
-		function addClient ($request,$response,$args) {
-			$body = $request->getParsedBody();
-			$nom = $body['nom'];
-		
-			return json_encode("");
-		}
-	
 	$app->post('/transaction/{client}/{montant}/{date}', 'transaction');
 	
 	
@@ -42,25 +26,16 @@
 		$montant = $request->getAttribute('montant');
 		$date = $request->getAttribute('date');
 		
-		
-	// //Création de la commande en BDD	
+		// //Création de la commande en BDD	
 		$commande = new Commande();
 		$commande->setClient_id($idClient);
-		//Rajouter le montant dans la BDD et enlever le status de la commande
 		$commande->setMontant($montant);
 		$commande->setDate($date);
 		$commande->save();
 		
 		$idCommande = rand(50000,9999999);
-		
+		//Retour dans un json les données
 		return json_encode(array('idTransaction' => $idCommande, 'date' => $date, 'montant' => $montant));	
 	}
-	
-	$app->get('/hello/{name}', function (Request $request, Response $response) {
-		$name = $request->getAttribute('name');
-		$response->getBody()->write("Hello, $name");
-    	return $response;
-	});
-
 	$app->run();
 ?>

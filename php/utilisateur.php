@@ -58,13 +58,11 @@ class utilisateur
 		}elseif ($this->request->getParam('action')=="editCompte")
 		{
 			$this->edit_compte();
-			//TODO reload la session à jours | update session 
-			//OU ne pas afficher le tpl(bad solution)
 			$this->response->setPageDisplay("infoClient");
 		}elseif ($this->request->getParam('action')=="editMdpCompte")
 		{
 			$this->edit_mdp_compte();
-			//on set la meme page avec la variable Flag de succès de l'opération dans la reponse
+			//on 'set' la meme page avec la variable Flag de succès de l'opération dans la reponse
 			$this->response->setPageDisplay("modificationMdp");
 		}
 		
@@ -76,6 +74,8 @@ class utilisateur
 		// Recuperation des variables du form-user
 		$nom = $_POST['nom']; // variable name pas id dans le html
 		$prenom = $_POST['prenom'];
+		$adresse = $_POST['adresse'];
+		$cp = $_POST['cp'];
 		$ville = $_POST['ville'];
 		$pays = $_POST['pays'];
 		$date = $_POST['date'];
@@ -85,7 +85,7 @@ class utilisateur
 		
 		// Mise en place de la requete Propel
 		$selectedClient = ClientQuery::create()
-		    ->find(); // on utilise properl
+		    ->find(); // on utilise propel
 		foreach($selectedClient as $selectedClient) 
 		{
 			//Vérification si le user est existant
@@ -108,7 +108,6 @@ class utilisateur
 			$client->setCodepostal($cp);
 			$client->setVille($ville);
 			$client->setPays($pays);
-			//$client->setDate($date);
 			$client->setLogin($login);
 			$client->setEmail($email);
 			$client->setPass(password_hash($password, PASSWORD_DEFAULT));
@@ -139,8 +138,6 @@ class utilisateur
 		foreach($selectedClient as $selectedClient) {
 			if($login == $selectedClient->getLogin() AND password_verify($password, $selectedClient->getPass()))
 			{
-			
-				//echo "OK";
 				$_SESSION['login']=$selectedClient->getLogin();
 				$_SESSION['mdp']=$selectedClient->getPass();
 				$_SESSION['nom']=$selectedClient->getNom();
