@@ -11,7 +11,7 @@ Création de l'utilisateur
     	</div>
     	
     	<div class="col-md-1"></div>
-    		<form method="POST" action="/utilisateur/validationCreationCompte.html" class="form-horizontal col-md-9" id="form-user" role="form">
+    		<form method="POST" action="/utilisateur/validationCreationCompte" class="form-horizontal col-md-9" id="form-user" role="form">
     			<div class="row">
     			<div class="form-group col-md-12">
     				<label class="control-label col-md-3">Nom :</label>

@@ -13,7 +13,7 @@ Information
 	    	nous contacter  :
 		    <ul>
 		    	<li>par mail :<a href="mailto:julien.groll@gmail.com">contact@biere-export.fr</a></li>
-		    	<li>par notre formulaire : <a href="/utils/contact.html">ici</a></li>
+		    	<li>par notre formulaire : <a href="/utils/contact">ici</a></li>
 		    	<li>par téléphone : 01.23.45.67.89</li>
 		    	<li>par courrier : BiereExport - 28 rue de la Fleur - Breuschwickersheim - 67112 </li>
 	    </ul>

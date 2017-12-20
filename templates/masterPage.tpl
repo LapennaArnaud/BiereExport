@@ -17,19 +17,19 @@
 					<img src=../public/img/icon-beer.png height=75 >
 				</a>
 				<ul class="nav navbar-nav navbar-right" id="menuBar">
-					<li><a href="/produit&action=catalogue.html"><span class="glyphicon glyphicon-book"></span> Catalogue</a></li>
-					<li><a href="/produit&action=panier.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier<span class = "badge" id="nbPanier">{$smarty.session.nbArticle}</span></a></li>
+					<li><a href="/produit&action=catalogue"><span class="glyphicon glyphicon-book"></span> Catalogue</a></li>
+					<li><a href="/produit&action=panier"><span class="glyphicon glyphicon-shopping-cart"></span> Panier<span class = "badge" id="nbPanier">{$smarty.session.nbArticle}</span></a></li>
 					
 					{if isset($smarty.session.login) }
-						<li><a href="/utilisateur/infoClient.html"><span class="glyphicon glyphicon-user"></span> {$smarty.session.login}</a></li>
-						<li><a href="/utilisateur/logOut.html" id="logout"><span class="glyphicon glyphicon-remove"></span> Log out</a></li>
+						<li><a href="/utilisateur/infoClient"><span class="glyphicon glyphicon-user"></span> {$smarty.session.login}</a></li>
+						<li><a href="/utilisateur/logOut" id="logout"><span class="glyphicon glyphicon-remove"></span> Log out</a></li>
 					{else}
-						<li><a href="/utilisateur/sign_up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="/utilisateur/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="/utilisateur/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="/utilisateur/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					{/if}
 				</ul>
 				<!--<form class="navbar-form navbar-right" method="post" action="?page=articleController&action=produit">-->
-				<form class="navbar-form navbar-right" method="post" action="/produit/produit.html">
+				<form class="navbar-form navbar-right" method="post" action="/produit/produit">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search" name="recherche" id="recherche">
 						<div class="input-group-btn">
@@ -47,7 +47,7 @@
 	</div>
 
 	<footer>
-		<p>© 2017Développé par <a style="color:#0a93a6; text-decoration:none;" href="https://giphy.com/gifs/l2Jhx6TQ6P3WAnv8c/html5"> Julien Groll</a> et <a style="color:#0a93a6; text-decoration:none;" href="https://media.tenor.com/images/b2e51e8b2ba5770d97650ae5aa4959b1/tenor.gif"> Arnaud LAPENNA</a>, All rights reserved 2016-2017.   <a style="color:#0a93a6; text-decoration:none;" href="/utils/info.html">Contactez-nous</a></p>
+		<p>© 2017Développé par <a style="color:#0a93a6; text-decoration:none;" href="https://giphy.com/gifs/l2Jhx6TQ6P3WAnv8c/html5"> Julien Groll</a> et <a style="color:#0a93a6; text-decoration:none;" href="https://media.tenor.com/images/b2e51e8b2ba5770d97650ae5aa4959b1/tenor.gif"> Arnaud LAPENNA</a>, All rights reserved 2016-2017.   <a style="color:#0a93a6; text-decoration:none;" href="/utils/info">Contactez-nous</a></p>
 	</footer>
 </body>
 

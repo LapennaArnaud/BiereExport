@@ -21,7 +21,7 @@ Mot de passe oublié
 				<h2 class="text-center">Le login et/ou l'email renseigné est incorect</h2>
 			</div>
 			<div>
-				<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/mdpOublie.html">ce lien</a>
+				<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/mdpOublie">ce lien</a>
 			</div>
 		</div>
 	{/if}

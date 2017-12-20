@@ -10,7 +10,7 @@ Login
 			<div id="form-title-div">
 				<h2 class="text-center">Connexion</h2>
 			</div>
-			<form method="post" action="/utilisateur/validationLogin.html" class="form-horizontal col-md-offset-1 col-xs-offset-1 col-md-9 col-xs-9" id="form-login" role="form">
+			<form method="post" action="/utilisateur/validationLogin" class="form-horizontal col-md-offset-1 col-xs-offset-1 col-md-9 col-xs-9" id="form-login" role="form">
 				<div class="form-group col-md-12">
 					<div class="form-group col-md-12">
 						<label class="control-label col-md-3 col-xs-12" >Login :</label>
@@ -30,7 +30,7 @@ Login
 							<button type="submit" class="btn btn-default" >Valider</button>
 						</div>
 						<div class="form col-md-offset-8 col-xs-12">
-							<a href="/utilisateur/mdpOublie.html">Mot de passe oublié</a>
+							<a href="/utilisateur/mdpOublie">Mot de passe oublié</a>
 						</div>
 					</div>
 				</div>

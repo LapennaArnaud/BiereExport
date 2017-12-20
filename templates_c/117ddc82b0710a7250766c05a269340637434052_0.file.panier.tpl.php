@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-18 15:15:01
+/* Smarty version 3.1.31, created on 2017-12-20 15:11:32
   from "/home/ubuntu/workspace/templates/panier.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a37db75b12ac6_35203244',
+  'unifunc' => 'content_5a3a7da4e14bc7_54415063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '117ddc82b0710a7250766c05a269340637434052' => 
     array (
       0 => '/home/ubuntu/workspace/templates/panier.tpl',
-      1 => 1513609449,
+      1 => 1513782690,
       2 => 'file',
     ),
   ),
@@ -20,34 +20,34 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a37db75b12ac6_35203244 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a3a7da4e14bc7_54415063 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3476580385a37db75a8d104_31885312', "titre");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16067813635a3a7da4d84a89_06637823', "titre");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10262284845a37db75a944e2_63997277', "zone_travail");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19497023745a3a7da4d8cc11_33866067', "zone_travail");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6334279395a37db75b0d697_26513203', "javascript");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7284382785a3a7da4e0c121_85427504', "javascript");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/masterPage.tpl");
 }
 /* {block "titre"} */
-class Block_3476580385a37db75a8d104_31885312 extends Smarty_Internal_Block
+class Block_16067813635a3a7da4d84a89_06637823 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'titre' => 
   array (
-    0 => 'Block_3476580385a37db75a8d104_31885312',
+    0 => 'Block_16067813635a3a7da4d84a89_06637823',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -59,12 +59,12 @@ Panier
 }
 /* {/block "titre"} */
 /* {block "zone_travail"} */
-class Block_10262284845a37db75a944e2_63997277 extends Smarty_Internal_Block
+class Block_19497023745a3a7da4d8cc11_33866067 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'zone_travail' => 
   array (
-    0 => 'Block_10262284845a37db75a944e2_63997277',
+    0 => 'Block_19497023745a3a7da4d8cc11_33866067',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -85,34 +85,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </tr>
                 </thead>
                 <tbody>
-    <?php
+                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productList']->value, 'product');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
-?>   
-    
-    <!--    <div class="col-md-12 article-container">
-            <div class="col-md-offset-2 col-md-2" >
-                <img class="logo-panier img-rounded" src="<?php echo $_smarty_tpl->tpl_vars['product']->value->getImage();?>
-" alt="<?php echo $_smarty_tpl->tpl_vars['product']->value->getLibelle();?>
-">
-            </div>
-            <div class="text-article">
-                <h2 class="col-md-2"><?php echo $_smarty_tpl->tpl_vars['product']->value->getLibelle();?>
-</h2>
-            
-                <h4 class="col-md-2"><b>Prix TTC : </b><?php echo round($_smarty_tpl->tpl_vars['product']->value->getTauxTVA()->getTaux()*$_smarty_tpl->tpl_vars['product']->value->getPrixHT(),3);?>
- €</h4>
-                <div class="col-md-1">
-                    <button type="button" class="btn btn-danger " onclick="/produit/transaction.html">x</button>
-                </div>
-                
-            </div>
-        </div>-->
-        
-        
-        
-
+?>  
                     <tr>
                         <td class="col-sm-8 col-md-6">
                         <div class="media">
@@ -151,8 +128,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 ?>
 
 
-
-
                     <tr>
                         <td>   </td>
                         <td>   </td>
@@ -166,11 +141,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                         <td>   </td>
                         <td>   </td>
                         <td>
-                         <a href="/produit/catalogue.html"><button type="button" class="btn btn-default" href="">
+                         <a href="/produit/catalogue"><button type="button" class="btn btn-default" href="">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></a></td>
                         <td>
-                        <form method="post" action="/produit/paiement.html"id="form-panier" role="form">
+                        <form action="/produit/paiement" id="form-panier" role="form">
                             <button type="submit" class="btn btn-success">
                                 Checkout <span class="glyphicon glyphicon-play"></span>
                             </button></td>
@@ -182,7 +157,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
     </div>
 <?php } else { ?>
          <h3 class="text-center bigText">Pas de produit</h3>
-         <h4 class="text-center"><a href="/produit&action=catalogue.html">Pour ajouter des produits cliquez ici</a></h4>
+         <h4 class="text-center"><a href="/produit&action=catalogue">Pour ajouter des produits cliquez ici</a></h4>
 <?php }?>
 
 
@@ -191,12 +166,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "zone_travail"} */
 /* {block "javascript"} */
-class Block_6334279395a37db75b0d697_26513203 extends Smarty_Internal_Block
+class Block_7284382785a3a7da4e0c121_85427504 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'javascript' => 
   array (
-    0 => 'Block_6334279395a37db75b0d697_26513203',
+    0 => 'Block_7284382785a3a7da4e0c121_85427504',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -216,6 +191,22 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             },
             error: function(){
                 alert('bug');
+            }
+        });
+    }
+    
+    
+    function plusPanier(id, value){
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: 'index.php',
+            data: { page: "produit" ,action: "plusPanier", "id" : id, "value" : value },
+            success: function (data){
+    
+            },
+            error: function(){
+                
             }
         });
     }

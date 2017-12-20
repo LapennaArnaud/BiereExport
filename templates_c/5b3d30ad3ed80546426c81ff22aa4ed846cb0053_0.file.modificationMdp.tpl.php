@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-18 21:11:32
+/* Smarty version 3.1.31, created on 2017-12-19 13:45:17
   from "/home/ubuntu/workspace/templates/modificationMdp.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a382f047f7442_80705701',
+  'unifunc' => 'content_5a3917edccc8a9_67067874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b3d30ad3ed80546426c81ff22aa4ed846cb0053' => 
     array (
       0 => '/home/ubuntu/workspace/templates/modificationMdp.tpl',
-      1 => 1513631265,
+      1 => 1513690917,
       2 => 'file',
     ),
   ),
@@ -20,34 +20,34 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a382f047f7442_80705701 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a3917edccc8a9_67067874 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9978993885a382f047c92c3_90775638', "titre");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13295697995a3917edcaa4e3_97865393', "titre");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20918608105a382f047cdcb8_19561962', "zone_travail");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8658481825a3917edcae8a9_97297893', "zone_travail");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21405981965a382f047f27d3_03087429', "javascript");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17244191335a3917edcc8898_59372073', "javascript");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/masterPage.tpl");
 }
 /* {block "titre"} */
-class Block_9978993885a382f047c92c3_90775638 extends Smarty_Internal_Block
+class Block_13295697995a3917edcaa4e3_97865393 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'titre' => 
   array (
-    0 => 'Block_9978993885a382f047c92c3_90775638',
+    0 => 'Block_13295697995a3917edcaa4e3_97865393',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -59,12 +59,12 @@ Modification mot de passe
 }
 /* {/block "titre"} */
 /* {block "zone_travail"} */
-class Block_20918608105a382f047cdcb8_19561962 extends Smarty_Internal_Block
+class Block_8658481825a3917edcae8a9_97297893 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'zone_travail' => 
   array (
-    0 => 'Block_20918608105a382f047cdcb8_19561962',
+    0 => 'Block_8658481825a3917edcae8a9_97297893',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -77,7 +77,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 	</div>
 	<?php if (empty($_smarty_tpl->tpl_vars['flagList']->value)) {?>
 		<div class="col-md-1"></div>
-		<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/editMdpCompte.html">
+		<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/editMdpCompte">
 				<div class="form-group col-md-12">
 					
 					<div class="form-group col-md-12">
@@ -121,7 +121,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 					<h2 class="text-center">Champ ancient mot de passe erroné</h2>
 				</div>
 				<div>
-					<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/modificationMdp.html">ce lien</a>
+					<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/modificationMdp">ce lien</a>
 				</div>
 			</div>
 		<?php } else { ?>
@@ -138,12 +138,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "zone_travail"} */
 /* {block "javascript"} */
-class Block_21405981965a382f047f27d3_03087429 extends Smarty_Internal_Block
+class Block_17244191335a3917edcc8898_59372073 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'javascript' => 
   array (
-    0 => 'Block_21405981965a382f047f27d3_03087429',
+    0 => 'Block_17244191335a3917edcc8898_59372073',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

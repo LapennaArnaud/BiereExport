@@ -20,26 +20,7 @@ Panier
                     </tr>
                 </thead>
                 <tbody>
-    {foreach $productList as $product}   
-    
-    <!--    <div class="col-md-12 article-container">
-            <div class="col-md-offset-2 col-md-2" >
-                <img class="logo-panier img-rounded" src="{$product->getImage()}" alt="{$product->getLibelle()}">
-            </div>
-            <div class="text-article">
-                <h2 class="col-md-2">{$product->getLibelle()}</h2>
-            
-                <h4 class="col-md-2"><b>Prix TTC : </b>{round($product->getTauxTVA()->getTaux()*$product->getPrixHT(),3)} €</h4>
-                <div class="col-md-1">
-                    <button type="button" class="btn btn-danger " onclick="/produit/transaction.html">x</button>
-                </div>
-                
-            </div>
-        </div>-->
-        
-        
-        
-
+                {foreach $productList as $product}  
                     <tr>
                         <td class="col-sm-8 col-md-6">
                         <div class="media">
@@ -67,8 +48,6 @@ Panier
                     </tr>
     {/foreach}
 
-
-
                     <tr>
                         <td>   </td>
                         <td>   </td>
@@ -81,11 +60,11 @@ Panier
                         <td>   </td>
                         <td>   </td>
                         <td>
-                         <a href="/produit/catalogue.html"><button type="button" class="btn btn-default" href="">
+                         <a href="/produit/catalogue"><button type="button" class="btn btn-default" href="">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></a></td>
                         <td>
-                        <form method="post" action="/produit/paiement.html"id="form-panier" role="form">
+                        <form action="/produit/paiement" id="form-panier" role="form">
                             <button type="submit" class="btn btn-success">
                                 Checkout <span class="glyphicon glyphicon-play"></span>
                             </button></td>
@@ -97,7 +76,7 @@ Panier
     </div>
 {else}
          <h3 class="text-center bigText">Pas de produit</h3>
-         <h4 class="text-center"><a href="/produit&action=catalogue.html">Pour ajouter des produits cliquez ici</a></h4>
+         <h4 class="text-center"><a href="/produit&action=catalogue">Pour ajouter des produits cliquez ici</a></h4>
 {/if}
 
 
@@ -118,6 +97,22 @@ Panier
             },
             error: function(){
                 alert('bug');
+            }
+        });
+    }
+    
+    
+    function plusPanier(id, value){
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: 'index.php',
+            data: { page: "produit" ,action: "plusPanier", "id" : id, "value" : value },
+            success: function (data){
+    
+            },
+            error: function(){
+                
             }
         });
     }

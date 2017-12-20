@@ -9,8 +9,11 @@
 	require_once 'php/Controller/Request.php';
     require_once 'php/Controller/ActionController.php';
 	require_once 'php/Controller/FrontController.php';
+	
+	//require_once 'rest.php';
 
 
+	
 	// FRONT CONTROLEUR
 	FrontController::dispatch();
 ?>

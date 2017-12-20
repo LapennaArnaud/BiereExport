@@ -11,7 +11,7 @@ Mot de passe oublié
     	<h2 class="text-center">Mot de passe oublié</h2>
 	</div>
 	<div class="col-md-1"></div>
-	<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/validationMdpOublie.html">
+	<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/validationMdpOublie">
 			<div class="form-group col-md-12">
 				<div class="form-group col-md-12">
     				<label class="control-label col-md-3" >Login:</label>

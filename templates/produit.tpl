@@ -92,7 +92,7 @@ Recherche
             }
     });
     }
-    
+
     function hiddenCategorie(value){
         switch(value){
             case "":

@@ -17,21 +17,7 @@ class utils
 		}elseif($this->request->getParam('action')=="info")
 		{
 		    $this->response->setPageDisplay("info");
-		}elseif($this->request->getParam('action')=="test")
-		{
-			$this->test();
-		    $this->response->setPageDisplay("test");
 		}
 		return $this->response;
-	}
-	
-	
-	public function test()
-	{
-		$panier = [];
-		$panier[0] = 2;
-		$panier[1] = 4;
-		$panier[sizeof($panier)+1] = 5;
-		print_r($panier);
 	}
 }

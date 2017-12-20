@@ -1,13 +1,14 @@
 #Activation du Rewriting d'URL
 RewriteEngine On
 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 
-#Pour que la requete AJAX fonction avec /page&action="".html
-RewriteRule ^([^/]*)\.html$ /?page=$1 [L]
+#Pour que la requete AJAX fonction avec /page&action=""
+RewriteRule ^([^/]*)$ /?page=$1 [NC,L]
 
-#Pour avoir une URL propre du style /page/action.html
-RewriteRule ^([^/]*)/([^/]*)\.html$ /?page=$1&action=$2 [L]
-
-#RewriteRule ^([^/]*)/([^/]*)/([^/]*)\.html$ /?page=$1&action=$2&id=$3 [L]
+#Pour avoir une URL propre du style /page/action
+RewriteRule ^([^/]*)/([^/]*)$ /?page=$1&action=$2 [NC,L]
 
 # http://www.generateit.net/mod-rewrite/index.php
+

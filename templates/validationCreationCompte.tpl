@@ -21,7 +21,7 @@ Création de l'utilisateur
 				<h2 class="text-center">L'utilisateur existe déjà</h2>
 			</div>
 			<div>
-				<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/sign_up.html">ce lien</a>
+				<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/sign_up">ce lien</a>
 			</div>
 		</div>
 	{/if}

@@ -5,7 +5,7 @@ Accueil
 {/block}
 
 {block name="zone_travail"}
-
+		
 		<div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
 		  <!-- Indicators -->
 			<ol class="carousel-indicators">

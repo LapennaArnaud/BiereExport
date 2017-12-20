@@ -12,7 +12,7 @@ Modification mot de passe
 	</div>
 	{if empty($flagList)}
 		<div class="col-md-1"></div>
-		<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/editMdpCompte.html">
+		<form method="post" class="form-horizontal col-md-9" id="form-mdp" role="form" action="/utilisateur/editMdpCompte">
 				<div class="form-group col-md-12">
 					
 					<div class="form-group col-md-12">
@@ -56,7 +56,7 @@ Modification mot de passe
 					<h2 class="text-center">Champ ancient mot de passe erroné</h2>
 				</div>
 				<div>
-					<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/modificationMdp.html">ce lien</a>
+					<h3 class="text-center">Vous pouvez réessayer en suivant <a href="/utilisateur/modificationMdp">ce lien</a>
 				</div>
 			</div>
 		{else}

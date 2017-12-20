@@ -38,14 +38,13 @@ class produit
 		}elseif($this->request->getParam('action')=="paiement")
 		{
 			$this->paiement();
-			$this->response->setPageDisplay("accueil");
+			
 		}elseif($this->request->getParam('action')=="removePanier")
 		{
 			//Renvoie d'un template vide pour les réponses JSON
 			$this->response->setPageDisplay("request_json");
 			$this->removePanier();
 		}
-		
 		return $this->response;
 	}
 	
@@ -69,9 +68,11 @@ class produit
 	    //Filtre pour rechercher un produit ressemblant à la recherche
 	    	->filterByLibelle('%'.$recherche.'%', Criteria::LIKE)
 	        ->find();
-	    $this->response->setData(array("productList"=>$selectedArticle));
+	    if (sizeof($selectedArticle) > 0){
+	    	$this->response->setData(array("productList"=>$selectedArticle));
+	    }
 	}
-	
+
 	public function ajoutPanier()
 	{
 		if(isset($_GET["id"])){
@@ -133,17 +134,14 @@ class produit
 	
 	public function chargementPanier()
 	{
-		
-		if(sizeof($_SESSION["panier"])==0){
-			
-		}else{
+		//Si la taille du tableau panier n'est pas égale a 0 on charge le panier
+		if(sizeof($_SESSION["panier"])!==0){
 			//print_r($_SESSION["panier"]);
 			$selectedArticle = ArticleQuery::create()
         		->findPks(array_keys($_SESSION["panier"]));
         	//print_r($selectedArticle);
 			$this->response->setData(array("productList"=>$selectedArticle, "panier"=>$_SESSION["panier"]));
 		}
-
 	}
 	
 	public function rechercheProduit($categorie)
@@ -178,37 +176,56 @@ class produit
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		//Définit le parametre : Pour inclure l'en-tête dans la valeur de retour
 		curl_setopt($ch, CURLOPT_HEADER, 0);
+		
 		//Execute la session CURL
 		$output = curl_exec($ch);
-
 		$output= json_decode($output);
+
 		
+		if(curl_getinfo($ch, CURLINFO_HTTP_CODE)!==200){
+			throw new Exception(curl_error($ch)." Code ".curl_getinfo($ch, CURLINFO_HTTP_CODE));
+		}
 		curl_close($ch);
 		return $output;
 	}
 	
 	public function paiement()
 	{
-		$url = $_SERVER['HTTP_HOST'].'/transaction';
-		$date = date('d-m-Y');
-		$myvars = array(
-			'idClient' => $_SESSION['idClient'],
-			'montant' => $_SESSION['totalPanier'], //A faire aussi
-			'devise' => urlencode('€'),
-			'date' => $date
-		);
-		foreach($myvars as $i){
-			$url .= '/' .$i;
+		if(isset($_SESSION['idClient'])){
+		
+			$url = $_SERVER['HTTP_HOST'].'/rest.php/transaction';
+			$date = date('d-m-Y');
+			$myvars = array(
+				'idClient' => $_SESSION['idClient'],
+				'montant' => $_SESSION['totalPanier'], //A faire aussi
+				'date' => $date
+			);
+			foreach($myvars as $i){
+				$url .= '/' .$i;
+			}
+			try{
+				//Lance la requete CURL
+				$result = $this->do_post_request($url);
+				//Récupération des variables
+				$idCommande = $result->{'idTransaction'};
+				$montant = $result->{'montant'};
+				$date = $result->{'date'};
+				//Clear du panier
+				$this->clearPanier();
+				//Set de la data
+				$this->response->setData(array('success' =>'La commande n° '.$idCommande.' d\'un montant de '.$montant.'€ a bien été enregistrée le '.$date.'.'));
+			}catch(Exception $ex){
+				$this->response->setData(array('error' => $ex->getMessage()));
+				echo $ex->getMessage();
+			}
+			$this->response->setPageDisplay("confirmationAchat");
+		}else{
+			$this->response->setPageDisplay("login");
 		}
-		try{
-			echo $url;
-			//Lance la requete CURL
-			$result = $this->do_post_request($url);
-			$idCommande = $result->{'idtransaction'};
-			$this->response->setData(array('sucess' => 'OK'));
-		}catch(Exception $ex){
-			$this->response->setData(array('error' => 'NOK'));
-		}
+	}
+	public function clearPanier(){
+		unset($_SESSION['panier']);
+		$_SESSION['nbArticle']=0;
 	}
 }
 
